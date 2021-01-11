@@ -9,4 +9,4 @@ function largestNum(num1, num2, num3) {
   }
   return result
 }
-console.log(largestNum(-3, -5, -22.5));
+console.log(`The largest number is ${largestNum(-3, -5, -22.5)}.`);
