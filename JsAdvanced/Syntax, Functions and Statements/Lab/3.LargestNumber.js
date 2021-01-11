@@ -1,4 +1,4 @@
-function echoFunction(num1, num2, num3) {
+function largestNum(num1, num2, num3) {
   let result = 0
   if(num1 > num2 && num1 > num3){
     result = num1
@@ -9,4 +9,4 @@ function echoFunction(num1, num2, num3) {
   }
   return result
 }
-console.log(echoFunction(-3, -5, -22.5));
+console.log(largestNum(-3, -5, -22.5));
