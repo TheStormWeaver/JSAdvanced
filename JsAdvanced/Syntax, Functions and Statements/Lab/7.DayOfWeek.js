@@ -1,19 +1,19 @@
 function dayOfWeek(day) {
   let result = "" 
-  if(day == "1"){
-    result = "Monday"
-  }else if(day == "2"){
-    result = "Tuesday"
-  }else if(day == "3"){
-    result = "Wednesday"
-  }else if(day == "4"){
-    result = "Thursday"
-  }else if(day == "5"){
-    result = "Friday"
-  }else if(day == "6"){
-    result = "Saturday"
-  }else if(day == "7"){
-    result = "Sunday"
+  if(day == "Monday"){
+    result = 1
+  }else if(day == "Tuesday"){
+    result = 2
+  }else if(day == "Wednesday"){
+    result = 3
+  }else if(day == "Thursday"){
+    result = 4
+  }else if(day == "Friday"){
+    result = 5
+  }else if(day == "Saturday"){
+    result = 6
+  }else if(day == "Sunday"){
+    result = 7
   }else {
     result = "error"
   }
