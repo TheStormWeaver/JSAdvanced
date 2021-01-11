@@ -13,6 +13,6 @@ function mathOperations(num1 , num2, arg) {
   }else if(arg == '**'){
     result = num1 ** num2
   }
-  console.log(result)
+  return result
 }
-mathOperations(5, 6, '+');
+console.log(mathOperations(5, 6, '+'));
