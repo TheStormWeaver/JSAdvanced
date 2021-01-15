@@ -3,7 +3,7 @@ function extractIncreasingArr(arr) {
   let biggest = Number.MIN_SAFE_INTEGER;
   for (let i = 0; i < arr.length; i++) {
     let current = arr[i];
-    if (biggest < current) {
+    if (biggest <= current) {
       biggest = current;
       result.push(biggest);
     }
