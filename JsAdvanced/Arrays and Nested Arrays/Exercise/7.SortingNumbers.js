@@ -3,11 +3,11 @@ function numberSorting(arr) {
   let inputSorted = arr.slice(0).sort((a, b) => b - a);
   for (let i = 0; i < arr.length; i++) {
     if (i % 2 != 0) {
-      let smallest = inputSorted.shift();
-      output.push(smallest);
-    } else {
-      let biggest = inputSorted.pop();
+      let biggest = inputSorted.shift();
       output.push(biggest);
+    } else {
+      let smallest = inputSorted.pop();
+      output.push(smallest);
     }
   }
   return output;
