@@ -10,6 +10,6 @@ function numberSorting(arr) {
       output.push(biggest);
     }
   }
-  return output.join('\n');
+  return output;
 }
 console.log(numberSorting([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]));
