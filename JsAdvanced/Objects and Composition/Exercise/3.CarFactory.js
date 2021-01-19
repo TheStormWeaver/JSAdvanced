@@ -3,7 +3,7 @@ function carFactory(input) {
     model: input.model,
     engine:  getEngine(input.power),
     carriage: getCarriage(input.carriage, input.color),
-    wheelsize: getWheelSize(input.wheelsize)
+    wheel: getWheelSize(input.wheelsize)
   }
 
   function getEngine(power) {
