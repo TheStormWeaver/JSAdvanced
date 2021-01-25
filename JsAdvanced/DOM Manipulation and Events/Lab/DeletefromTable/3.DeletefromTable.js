@@ -1,15 +1,16 @@
 function deleteByEmail() {
     let email = document.querySelector('input[name="email"]').value
     let rows = Array.from(document.querySelectorAll('tbody tr'))
+    let resultElement = document.getElementById('result').textContent
     let deleted = false
     for (const row of rows) {
         if(row.children[1].textContent == email){
             row.parentNode.removeChild(row)
             deleted = true
-            document.getElementById('result').textContent = 'Deleted.'
+            resultElement = 'Deleted.'
         }
     }
     if(deleted == false){
-        document.getElementById('result').textContent = 'Not found.'
+        resultElement = 'Not found.'
     }
 }
