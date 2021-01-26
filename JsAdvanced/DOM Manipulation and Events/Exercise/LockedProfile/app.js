@@ -2,8 +2,7 @@ function lockedProfile() {
   document.getElementById("main").addEventListener("click", (e) => {
     if (e.target.tagName === "BUTTON") {
       const profile = e.target.parentNode;
-      const isLocked =
-        profile.querySelector("input[type=radio]:checked").value === "lock";
+      const isLocked = profile.querySelector("input[type=radio]:checked").value === "lock";
       
       if (isLocked) {
         return;
