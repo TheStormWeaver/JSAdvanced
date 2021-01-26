@@ -8,9 +8,9 @@ function create(words) {
       p.style.display = 'none'
       div.appendChild(p) 
       div.addEventListener("click", function (e){
-         const p = e.target.children[0] || e.target
-         const isVisible = p.style.display == "block"
-         p.style.display = isVisible ? 'none' : 'block'
+         const par = e.target.children[0] || e.target
+         const isVisible = par.style.display == "block"
+         par.style.display = isVisible ? 'none' : 'block'
       })
       content.appendChild(div)
    }
