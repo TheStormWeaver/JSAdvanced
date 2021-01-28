@@ -31,8 +31,6 @@ firstZeroTest.append('again');
 firstZeroTest.removeStart(3);
 firstZeroTest.removeEnd(4);
 
-
-
 let secondZeroTest = solve();
 
 secondZeroTest.append('123');
