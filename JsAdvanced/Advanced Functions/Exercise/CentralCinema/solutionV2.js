@@ -15,7 +15,7 @@ function solve() {
     const div = e.target.parentNode
     const input = div.children[1]
 
-    if(input.value == ""){ return }
+    if(!Number(input.value)){ return }
 
     const span = document.createElement('span')
     const name = li.children[0].textContent
