@@ -1,4 +1,4 @@
-const { epxect, expect } = require("chai");
+const { expect } = require("chai");
 const sum = require("./4.sumOfNums");
 
 describe("Sum Numbers", () => {
