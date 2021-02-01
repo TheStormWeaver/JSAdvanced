@@ -1,5 +1,5 @@
 const { epxect, expect } = require("chai");
-const sum = require("./Project");
+const sum = require("./4.sumOfNums");
 
 describe("Sum Numbers", () => {
   it("sums single num", () => {
