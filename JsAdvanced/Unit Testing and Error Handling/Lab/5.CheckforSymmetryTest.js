@@ -19,11 +19,11 @@ describe("isSymmetric", () => {
     expect(isSymmetric([1, 1, 1])).to.equal(true)
   })
 
-  it('returns false for invalid input', () => {
+  it('returns false for valid string input', () => {
     expect(isSymmetric(['a', 'a'])).to.equal(true)
   })
 
-  it('returns false for invalid input', () => {
+  it('returns false for invalid string input', () => {
     expect(isSymmetric(['a', 'b'])).to.equal(false)
   })
 
