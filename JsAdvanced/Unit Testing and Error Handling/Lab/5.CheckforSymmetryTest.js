@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const isSymmetric = require("./Project");
+const isSymmetric = require("./5.CheckforSymmetry");
 
 describe("isSymmetric", () => {
   it('return true for valid symmetric input', () => {
