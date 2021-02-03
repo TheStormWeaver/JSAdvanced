@@ -1,5 +1,5 @@
 const { expect, assert } = require("chai");
-const isOddOrEven = require("./Project");
+const isOddOrEven = require("./2.EvenOrOdd");
 
 describe('isOddOrEven', () => {
   it('Type is string', () => {
