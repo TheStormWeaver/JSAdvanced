@@ -20,7 +20,7 @@ function solve() {
     }
   }
   const myCircle = new Circle(3);
-  console.log(myCircle.getR);
-  console.log(myCircle.getDiameter);
+  console.log(myCircle.getR());
+  console.log(myCircle.getDiameter());
 }
 solve();
