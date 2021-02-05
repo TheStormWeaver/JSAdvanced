@@ -17,12 +17,8 @@ describe("PaymentPackage Test", () => {
     assert.equal(instance.name, "Name");
     instance.name = "Pesho";
     assert.equal(instance.name, "Pesho");
-    assert.throw(() => {
-      instance.name = "";
-    }, "Name must be a non-empty string");
-    assert.throw(() => {
-      instance.name = 2;
-    }, "Name must be a non-empty string");
+    assert.throw(() => {instance.name = "";}, "Name must be a non-empty string");
+    assert.throw(() => {instance.name = 2;}, "Name must be a non-empty string");
   });
 
   it("VAT tests", () => {
@@ -30,18 +26,10 @@ describe("PaymentPackage Test", () => {
     assert.equal(instance.VAT, 20);
     instance.VAT = 40;
     assert.equal(instance.VAT, 40);
-    assert.throw(() => {
-      instance.VAT = -2;
-    }, "VAT must be a non-negative number");
-    assert.throw(() => {
-      instance.VAT = "2";
-    }, "VAT must be a non-negative number");
-    assert.throw(() => {
-      instance.VAT = "string";
-    }, "VAT must be a non-negative number");
-    assert.throw(() => {
-      instance.VAT = undefined;
-    }, "VAT must be a non-negative number");
+    assert.throw(() => {instance.VAT = -2;}, "VAT must be a non-negative number");
+    assert.throw(() => {instance.VAT = "2";}, "VAT must be a non-negative number");
+    assert.throw(() => {instance.VAT = "string";}, "VAT must be a non-negative number");
+    assert.throw(() => {instance.VAT = undefined;}, "VAT must be a non-negative number");
   });
 
   it("value tests", () => {
@@ -49,24 +37,16 @@ describe("PaymentPackage Test", () => {
     assert.equal(instance.value, 100);
     instance.value = 40;
     assert.equal(instance.value, 40);
-    assert.throw(() => {
-      instance.value = -2;
-    }, "Value must be a non-negative number");
-    assert.throw(() => {
-      instance.value = "2";
-    }, "Value must be a non-negative number");
+    assert.throw(() => {instance.value = -2;}, "Value must be a non-negative number");
+    assert.throw(() => {instance.value = "2";}, "Value must be a non-negative number");
     assert.doesNotThrow(() => {instance.value = 0})
   });
 
   it("active tests", () => {
     instance = new PaymentPackage("Name", 100);
     assert.equal(instance.active, true);
-    assert.throw(() => {
-      instance.active = 0;
-    }, "Active status must be a boolean");
-    assert.throw(() => {
-      instance.active = "";
-    }, "Active status must be a boolean");
+    assert.throw(() => {instance.active = 0;}, "Active status must be a boolean");
+    assert.throw(() => {instance.active = "";}, "Active status must be a boolean");
   });
 
   it("toString tests", () => {
