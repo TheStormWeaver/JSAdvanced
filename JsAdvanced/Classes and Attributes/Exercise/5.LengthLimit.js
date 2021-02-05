@@ -16,9 +16,7 @@ class Stringer {
 
   toString() {
     let result = "";
-    if (this.innerLength === 0) {
-      result = "...";
-    } else if (this.innerLength < this.innerString.length) {
+    if (this.innerLength < this.innerString.length) {
       result = this.innerString.slice(0, this.innerLength) + "...";
     } else {
       result = this.innerString;
