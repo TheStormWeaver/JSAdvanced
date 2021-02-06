@@ -1,21 +1,21 @@
-function solve(obj) {
-  if (!["GET", "POST", "DELETE", "CONNECT"].includes(obj.method)) {
-    throw new Error(`Invalid request header: Invalid Method`);
-  }
-
-  if (!["HTTP/0.9", "HTTP/1.0", "HTTP/1.1", "HTTP/2.0"].includes(obj.version)) {
-    throw new Error(`Invalid request header: Invalid Version`);
-  }
-
-  if (obj.uri === undefined || !obj.uri || !(/^([a-zA-Z0-9\.]+|\*)$/gm.test(obj.uri))) {
-    throw new Error(`Invalid request header: Invalid URI`);
-  }
-  
-  if(obj.message === undefined || (/[\<\>\&\\\'\"]/gm.test(obj.message))){
-    throw new Error(`Invalid request header: Invalid Message`);
-  }
-
-  return obj;
+function requestValidator(obj) {
+    let validMethods = ["GET", "POST", "DELETE", "CONNECT"];
+    if(! (obj.method && validMethods.includes(obj.method))){
+        throw new Error("Invalid request header: Invalid Method");
+    }
+    let uriRegex = /^[\w.]+$/;
+    if(! (obj.uri && ( uriRegex.test(obj.uri) || obj.uri === "*"))){
+        throw new Error("Invalid request header: Invalid URI");
+    }
+    let validVerisons = ["HTTP/0.9", "HTTP/1.0", "HTTP/1.1", "HTTP/2.0"];
+    if(! (obj.version && validVerisons.includes(obj.version))){
+        throw new Error("Invalid request header: Invalid Version");
+    }
+    let messageRegex = /^[^<>\\&'"]*$/;
+    if(! ( obj.hasOwnProperty("message") && (messageRegex.test(obj.message) || obj.message === ""))) {
+        throw new Error("Invalid request header: Invalid Message");
+    }
+    return obj;
 }
 console.log(
   solve({
