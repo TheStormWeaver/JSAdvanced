@@ -1,4 +1,3 @@
-  
 function getArticleGenerator(articles) {
     let content = $('#content');
     return function () {
@@ -9,7 +8,6 @@ function getArticleGenerator(articles) {
         }
     }
 }
-
 let articles =[
     "Cats are the most popular pet in the United States: There are 88 million pet cats and 74 million dogs.",
     "A group of cats is called a clowder.",
