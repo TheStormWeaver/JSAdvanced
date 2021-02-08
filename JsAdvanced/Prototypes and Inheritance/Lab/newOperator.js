@@ -15,6 +15,7 @@ function Person(firstName, lastName){
         }
     })
 }
+
 const myPerson = new Person("May", "Sure")
 console.log(myPerson)
 */
@@ -45,6 +46,7 @@ const myProto = {
         console.log(`${this.firstName} wrote: ${message}`)
     }
 }
+
 const myPerson = new Person("May", "Sure")
 console.log(myPerson)
 */
