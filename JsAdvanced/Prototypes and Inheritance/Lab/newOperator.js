@@ -54,3 +54,6 @@ function newOperator(constructor, ...params){
     constructor.apply(result, params)
     return result
 }
+
+
+
