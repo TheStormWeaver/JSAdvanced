@@ -14,6 +14,7 @@ class Person{
         this.lastName = tokens[1]
     }
 }
+
 const myPerson = new Person("May", "Sure")
 console.log(myPerson.fullName)
 
@@ -25,4 +26,3 @@ myPerson.fullName = "May Sure"
 
 console.log(myPerson.firstName)
 console.log(myPerson.lastName)
-
