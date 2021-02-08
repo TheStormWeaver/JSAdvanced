@@ -2,7 +2,7 @@ function Person(firstName, lastName){
     this.firstName = firstName
     this.lastName = lastName
 
-    Object.defineProperties(this, "fullName", {
+    Object.defineProperty(this, "fullName", {
         enumerable: true,
         get: function(){
             return  `${this.firstName} ${this.lastName}`
@@ -17,7 +17,7 @@ function Person(firstName, lastName){
 
 const myPerson = new Person("May", "Sure")
 console.log(myPerson.fullName)
-
+ 
 myPerson.lastName = "Jackson"
 
 console.log(myPerson.fullName)
@@ -26,6 +26,3 @@ myPerson.fullName = "May Sure"
 
 console.log(myPerson.firstName)
 console.log(myPerson.lastName)
-
-
-
