@@ -19,5 +19,5 @@ Employee.prototype.collectSalary = function () {
 const myEmployee = new Employee("Peter", 60000)
 
 console.log(myEmployee)
-console.log(myEmployee.collectSalary())
-console.log(myEmployee.sayHi())
+myEmployee.collectSalary()
+myEmployee.sayHi()
