@@ -29,7 +29,7 @@ function solve(){
         }
 
         collectSalary(){
-            console.log(`${this.name} recived ${this.salary} this month.`)
+            console.log(`${this.name} received ${this.salary} this month.`)
         }
     }
 
@@ -49,7 +49,7 @@ function solve(){
             this.dividend = 0
         }
         collectSalary(){
-            console.log(`${this.name} recived ${this.salary + this.dividend} this month.`)
+            console.log(`${this.name} received ${this.salary + this.dividend} this month.`)
         }
     }
     return {Junior, Senior, Manager};
