@@ -22,4 +22,4 @@ Person.prototype.toSpeciesString = function () {
 };
 
 let newP = new Person("Maria", "maria@gmail.com");
-console.log(newP.toSpeciesString());
+newP.toSpeciesString();
