@@ -58,6 +58,7 @@ class Parking {
         this.vehicles
           .sort((a, b) => a.carModel.localeCompare(b.carModel))
           .map((car) => `${car.carModel} == ${car.carNumber} - ${car.payed ? "Has payed" : "Not payed"}`)
+          .join('\n')
       ].join('\n')
     }
   }
