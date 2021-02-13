@@ -1,3 +1,6 @@
+const { expect, assert } = require("chai");
+const pizzUni = require("./Project");
+
 describe("pizzaUni", () => {
   it("makeAnOrder", () => {
     let pizza = { orderedPizza: "pizza", orderedDrink: "drink" };
@@ -63,3 +66,5 @@ describe("pizzaUni", () => {
 
   })
 });
+
+/*    expect(() => pizzUni.makeAnOrder({orderedDrink: 'drink'})).to.throw('You must order at least 1 Pizza to finish the order')  */
