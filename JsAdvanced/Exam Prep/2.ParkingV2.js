@@ -51,13 +51,13 @@ class Parking {
   getStatistics(carNumber) {
     if (carNumber) {
       let car = this.vehicles.find((car) => car.carNumber == carNumber);
-      return `${car.carModel} == ${car.carNumber} - ${car.payed ? "Has Payed" : "Not Payed"}`
+      return `${car.carModel} == ${car.carNumber} - ${car.payed ? "Has payed" : "Not payed"}`
     } else {
       return [
         `The Parking Lot has ${this.capacity} empty spots left.`,
         this.vehicles
           .sort((a, b) => a.carModel.localeCompare(b.carModel))
-          .map((car) => `${car.carModel} == ${car.carNumber} - ${car.payed ? "Has Payed" : "Not Payed"}`)
+          .map((car) => `${car.carModel} == ${car.carNumber} - ${car.payed ? "Has payed" : "Not payed"}`)
       ].join('\n')
     }
   }
