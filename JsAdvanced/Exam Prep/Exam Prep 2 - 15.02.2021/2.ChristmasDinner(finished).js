@@ -68,6 +68,7 @@ class ChristmasDinner {
         return result.join('\n');
     }
 }
+
 let dinner = new ChristmasDinner(300);
 
 dinner.shopping(["Salt", 1]);
