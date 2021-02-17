@@ -1,4 +1,3 @@
-//TODO - Sorting function
 function solution() {
   let parentDiv = document.querySelector(".container");
   let ListSection = parentDiv.children[1];
@@ -35,7 +34,7 @@ function solution() {
     li.appendChild(sendBtn);
     li.appendChild(discardBtn);
     listUl.appendChild(li);
-    sort(listUl)
+    sort()
   }
   function moveToSent(li) {
     let liCopy = li.cloneNode(true);
@@ -59,9 +58,12 @@ function solution() {
 
     discardedUl.appendChild(liCopy);
   }
-  function sort(list) {
-    let arr = Array.from(document.getElementsByClassName("gift"));
-    arr.sort((a, b) => a.textContent.localeCompare(b.textContent));
+  function sort() {
+    let arr = Array.from(listUl.children);
+    arr.sort((a, b) => a.childNodes[0].textContent.localeCompare(b.childNodes[0].textContent));
+    for (const line of arr) {
+      listUl.appendChild(line)
+    }
   }
   function clearInput() {
     input.value = "";
@@ -79,3 +81,4 @@ function solution() {
     return result;
   }
 }
+
