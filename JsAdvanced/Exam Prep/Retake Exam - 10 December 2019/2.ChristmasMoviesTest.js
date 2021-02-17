@@ -49,8 +49,14 @@ describe("Christmas Movies", function () {
     })
     it("Adding +1 to watchMovie", function(){
       movie.buyMovie("Hello", ["Joe", "Danny"])
-      expect(movie.watchMovie("Hello")).to.equal(undefined)
+      movie.watchMovie("Hello")
       expect(movie.watched["Hello"]).to.equal(1)
+    })
+    it("Adding +2 to watchMovie", function(){
+      movie.buyMovie("Hello", ["Joe", "Danny"])
+      movie.watchMovie("Hello")
+      movie.watchMovie("Hello")
+      expect(movie.watched["Hello"]).to.equal(2)
     })
   })
 
@@ -58,7 +64,7 @@ describe("Christmas Movies", function () {
     it("Error for not having watched any movies", function(){
       expect(() => movie.favouriteMovie()).to.throw('You have not watched a movie yet this year!')
     })
-    it("Favorite movie being Hello", function(){
+    it("Favorite movie being Hello with 1 watch time", function(){
       movie.buyMovie("Hello", ["Joe", "Danny"])
       movie.watchMovie("Hello")
       expect(movie.favouriteMovie()).to.equal('Your favourite movie is Hello and you have watched it 1 times!')
