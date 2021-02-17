@@ -1,4 +1,4 @@
-lass ChristmasDinner {
+class ChristmasDinner {
     constructor(budget) {
         this.budget = budget;
         this.dishes = [];
