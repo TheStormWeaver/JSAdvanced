@@ -6,10 +6,10 @@ class ChristmasDinner {
     this.budget = budget;
     this.dishes = [];
     this.products = [];
-    this.guests = [];
+    this.guests = {};
   }
   shopping(product) {
-    for (let i = 0; i < product.length; i+= 2) {
+    for (let i = 0; i < product.length; i++) {
       let name = product[i];
       let price = product[i + 1];
       if (this.budget - price > 0) {
@@ -24,15 +24,15 @@ class ChristmasDinner {
   recipes(recipe) {
     let recipeName = recipe.recipeName;
     let productList = recipe.productsList;
-    let consistsProducts = 0;
+    let consists = 0;
     for (const line of productList) {
       for (const current of this.products) {
         if (line == current) {
-          consistsProducts++;
+          consists++;
         }
       }
     }
-    if (consistsProducts == productList.length) {
+    if (consists == productList.length) {
       this.dishes.push({
         recipeName,
         productList,
@@ -43,42 +43,41 @@ class ChristmasDinner {
     }
   }
   inviteGuests(name, dish) {
-    let consistsDish = false;
+    let consists = false;
     for (const line of this.dishes) {
       if (dish === line.recipeName) {
-        consistsDish = true;
+        consists = true;
       }
-      if (consistsDish) {
-        for (const line of this.guests) {
-          if (line.hasOwnProperty(name)) {
+      if (consists) {
+        for (const line in this.guests) {
+          if (line == name) {
             throw new Error("This guest has already been invited");
           }
         }
-        this.guests.push({ [name]: dish });
+        this.guests[name] = dish;
         return `You have successfully invited ${name}!`;
       }
     }
-    if (!consistsDish) {
+    if (!consists) {
       throw new Error("We do not have this dish");
     }
   }
   showAttendance() {
-    let result = "";
-    for (const line of this.guests) {
-      for (const key in line) {
-        let dish = line[key];
-        let index = this.dishes.find((current) => current.recipeName == dish)
-        let ingridients = index.productList
-        result += `${key} will eat ${dish}, which consists of ${ingridients.join(", ")}\n`;
-      }
+    let result = [];
+    for (const key in this.guests) {
+      let dish = this.guests[key];
+      let index = this.dishes.find((current) => current.recipeName == dish);
+      let ingridients = index.productList;
+      result.push(
+        `${key} will eat ${dish}, which consists of ${ingridients.join(", ")}`
+      );
     }
-    return result.trim()
+    return result.join("\n").trim();
   }
 }
-
 let dinner = new ChristmasDinner(300);
 
-dinner.shopping(["Salt", 150]);
+dinner.shopping(["Salt", 1]);
 dinner.shopping(["Beans", 3]);
 dinner.shopping(["Cabbage", 4]);
 dinner.shopping(["Rice", 2]);
