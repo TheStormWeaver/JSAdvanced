@@ -50,7 +50,7 @@ function solve() {
             div.appendChild(ul)
             state[moduleName.value] = {div, ul, lis: []}
         }else{
-            module = state[moduleName.value].module
+            div = state[moduleName.value].div
             ul = state[moduleName.value].ul
         }
         state[moduleName.value].lis.push({li, date: date.value})
@@ -61,7 +61,7 @@ function solve() {
     }
 
     function del(ev){
-        let li = e.target.parentNode
+        let li = ev.target.parentNode
         let ul = li.parentNode
         let div = ul.parentNode
 
