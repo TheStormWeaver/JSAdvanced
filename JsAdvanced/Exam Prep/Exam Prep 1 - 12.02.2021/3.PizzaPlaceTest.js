@@ -67,4 +67,3 @@ describe("pizzaUni", () => {
   })
 });
 
-/*    expect(() => pizzUni.makeAnOrder({orderedDrink: 'drink'})).to.throw('You must order at least 1 Pizza to finish the order')  */
