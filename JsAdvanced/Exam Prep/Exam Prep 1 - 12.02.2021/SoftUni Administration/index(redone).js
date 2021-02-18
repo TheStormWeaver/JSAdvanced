@@ -11,9 +11,10 @@ function solve() {
         if(ev.target.tagName === "BUTTON"){
             if(ev.target == addBtn){
                 add(ev)
-                Object.entries(state).forEach(([name, module]) => {
-                    modulesOutput.appendChild(module.div)
-                })
+                let entries = Object.entries(state)
+                for (const line of entries) {
+                   modulesOutput.appendChild(line[1].div)
+                }
             }else{
                 del(ev)
             }
