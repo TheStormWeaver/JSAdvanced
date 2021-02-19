@@ -9,6 +9,7 @@ function addDestination() {
     return;
   } else {
     createElement();
+    clearInput();
   }
 
   function createElement() {
@@ -35,5 +36,9 @@ function addDestination() {
         break;
     }
   }
-}
 
+  function clearInput(){
+    cityInput.value = ""
+    countryInput.value = ""
+  }
+}
