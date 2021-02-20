@@ -110,7 +110,6 @@ John likes this story!
 My Story has 0 likes
 Ammy commented on My Story
 You replied successfully
-
 Title: My Story
 Creator: Anny
 Likes: 0
@@ -120,7 +119,6 @@ Comments:
 -- 1. Sammy: Some Content
 --- 1.2. SAmmy: Reply@
 --- 1.1. Zane: Reply
-
 Title: My Story
 Creator: Anny
 Likes: 1
@@ -130,6 +128,4 @@ Comments:
 -- 1. Sammy: Some Content
 --- 1.2. SAmmy: Reply@
 --- 1.1. Zane: Reply
-
 */
-
