@@ -7,7 +7,7 @@ class Story {
   }
 
   get likes() {
-    if (this._likes.length === 0) {
+    if (this._likes.length <= 0) {
       return `${this.title} has 0 likes`;
     } else if (this._likes.length === 1) {
       return `${this._likes[0]} likes this story!`;
@@ -31,32 +31,23 @@ class Story {
     if (!this._likes.includes(username)) {
       throw new Error("You can't dislike this story!");
     }
-    let index = this._likes.findIndex((el) => (el = username));
+    let index = this._likes.findIndex((el) => (el == username));
     this._likes.splice(index, 1);
     return `${username} disliked ${this.title}`;
   }
   comment(username, content, id) {
-    let isFound = false;
-    let i = 0;
-    let found = "";
-    for (const line of this._comments) {
-      if (line.id == id) {
-        isFound = true;
-        found = this._comments[i];
-      }
-      i++;
-    }
-    if (id == undefined || !isFound) {
+    let found = this._comments.find(a => a.id == id)
+    if (id == undefined || !found) {
       if (id == undefined) {
         id = this._comments.length + 1;
       }
       this._comments.push({ id, username, content, replies: [] });
       return `${username} commented on ${this.title}`;
     }
-    if (isFound) {
+    if (found) {
       let curId = found.replies.length + 1;
-      let newId = `${id}.${curId}`;
-      found.replies.push({ newId, username, content });
+      let replyId = `${id}.${curId}`;
+      found.replies.push({ replyId, username, content });
       return `You replied successfully`;
     }
   }
@@ -82,17 +73,17 @@ class Story {
       if(line.replies.length > 0){
         switch (sortingType) {
           case "asc":
-            line.replies.sort((a, b) => a.newId - b.newId)
+            line.replies.sort((a, b) => a.replyId - b.replyId)
             break;
           case "desc":
-            line.replies.sort((a, b) => b.newId - a.newId)
+            line.replies.sort((a, b) => b.replyId - a.replyId)
             break;
           case "username":
             line.replies.sort((a, b) => a.username.localeCompare(b.username))
             break;
         }
         for (const current of line.replies) {
-         result.push(`--- ${current.newId}. ${current.username}: ${current.content}`)
+         result.push(`--- ${current.replyId}. ${current.username}: ${current.content}`)
         }
       }
     }
