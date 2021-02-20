@@ -7,7 +7,7 @@ class Story {
   }
 
   get likes() {
-    if (this._likes.length === 0) {
+    if (this._likes.length <= 0) {
       return `${this.title} has 0 likes`;
     } else if (this._likes.length === 1) {
       return `${this._likes[0]} likes this story!`;
@@ -31,7 +31,7 @@ class Story {
     if (!this._likes.includes(username)) {
       throw new Error("You can't dislike this story!");
     }
-    let index = this._likes.findIndex((el) => (el = username));
+    let index = this._likes.findIndex((el) => (el == username));
     this._likes.splice(index, 1);
     return `${username} disliked ${this.title}`;
   }
