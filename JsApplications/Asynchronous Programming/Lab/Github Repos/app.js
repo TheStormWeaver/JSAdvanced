@@ -4,7 +4,12 @@ function loadRepos() {
   const url = `https://api.github.com/users/${username}/repos`;
 
   fetch(url)
-    .then((response) => response.json())
+    .then((response) => {
+      if (response.status === 404) {
+        throw new Error("User not found");
+      }
+      return response.json();
+    })
     .then((data) => {
       const ulElement = document.getElementById("repos");
       ulElement.innerHTML = "";
