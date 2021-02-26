@@ -3,13 +3,18 @@ async function loadRepos() {
 
   const url = `https://api.github.com/users/${username}/repos`;
 
-  const response = await fetch(url);
-  const data = await response.json()
-  const ulElement = document.getElementById("repos");
-  ulElement.innerHTML = "";
-  data.forEach((r) => {
-    const liElement = document.createElement("li");
-    liElement.textContent = r.full_name;
-    ulElement.appendChild(liElement);
-  });
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    const ulElement = document.getElementById("repos");
+    ulElement.innerHTML = "";
+    data.forEach((r) => {
+      const liElement = document.createElement("li");
+      liElement.textContent = r.full_name;
+      ulElement.appendChild(liElement);
+    });
+  } catch (error) {
+    console.log("Promise rejected");
+    console.log(error);
+  }
 }
