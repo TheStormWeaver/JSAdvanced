@@ -7,12 +7,14 @@ function loadRepos() {
     .then((response) => response.json())
     .then((data) => {
       const ulElement = document.getElementById("repos");
-			ulElement.innerHTML = ""
+      ulElement.innerHTML = "";
       data.forEach((r) => {
         const liElement = document.createElement("li");
         liElement.textContent = r.full_name;
         ulElement.appendChild(liElement);
       });
+    })
+    .catch((err) => {
+      console.log(err);
     });
 }
-
