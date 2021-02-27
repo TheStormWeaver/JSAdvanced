@@ -31,7 +31,7 @@ async function getRecipeDetails(id, preview){
   const response = await fetch(url)
   const data = await response.json()
   const result = e("article", {}, 
-  e("h2", {}, data.name),
+  e("h2", {onClick: toggleCard}, data.name),
   e("div", {className: "band"},
    e("div", {className: "thumb"}, e("img", {src: data.img})), 
    e("div", {className: "ingredients"},
@@ -44,8 +44,13 @@ async function getRecipeDetails(id, preview){
    data.steps.map(s => e("p", {}, s))
    )
   )
-  preview.parentNode.replaceChild(result, preview)
+  preview.replaceWith(result)
+
+  function toggleCard(){
+    result.replaceWith(preview)
+  }
 }
+
 
 window.addEventListener("load", () => {
   getRecipeList();
@@ -75,3 +80,5 @@ function e(type, attributes, ...content) {
 
   return result;
 }
+
+
