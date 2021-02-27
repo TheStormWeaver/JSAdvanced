@@ -1,6 +1,8 @@
 function attachEvents() {
-    document.getElementById("btnLoadPosts").addEventListener('click', getPosts)
-    document.getElementById("btnViewPost").addEventListener('click', displayPost)
+    const loadBtn = document.getElementById("btnLoadPosts")
+    loadBtn.addEventListener('click', getPosts)
+    const viewBtn = document.getElementById("btnViewPost")
+    viewBtn.addEventListener('click', displayPost)
 }
 
 attachEvents();
