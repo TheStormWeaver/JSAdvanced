@@ -1,37 +1,35 @@
 function solve() {
-  const departBtn = document.getElementById("depart")
-  const arriveBtn = document.getElementById("arrive")
-  const banner = document.querySelector("#info span")
+  const departBtn = document.getElementById("depart");
+  const arriveBtn = document.getElementById("arrive");
+  const banner = document.querySelector("#info span");
 
   let stop = {
-    next: "depot"
-  }
+    next: "depot",
+  };
 
   async function depart() {
     //request info about upcoming stop
-    const url = `http://localhost:3030/jsonstore/bus/schedule/  ` +stop.next
-    const response = await fetch(url)
-    const data = await response.json()
+    const url = `http://localhost:3030/jsonstore/bus/schedule/  ` + stop.next;
+    const response = await fetch(url);
+    const data = await response.json();
 
-    stop = data
+    stop = data;
 
     //update banner with stop name
-    banner.textContent = `Next stop ${stop.name}`
+    banner.textContent = `Next stop ${stop.name}`;
 
     //activate other button
-    departBtn.disabled = true
-    arriveBtn.disabled = false
+    departBtn.disabled = true;
+    arriveBtn.disabled = false;
   }
 
   function arrive() {
     //update banner to show arrival
-    banner.textContent = `Arriving at ${stop.name}`
+    banner.textContent = `Arriving at ${stop.name}`;
 
     //activate other button
-    departBtn.disabled = false
-    arriveBtn.disabled = true 
-
-    
+    departBtn.disabled = false;
+    arriveBtn.disabled = true;
   }
 
   return {
@@ -41,4 +39,3 @@ function solve() {
 }
 
 let result = solve();
-
