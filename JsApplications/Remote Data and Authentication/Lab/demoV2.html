@@ -14,7 +14,7 @@
     </form>
     <script>
       const form = document.getElementById("articleForm")
-      form.addEventListener('click', event => {
+      form.addEventListener('submit', event => {
         event.preventDefault()
 
         const title = form.querySelector('[name="title"]').value
