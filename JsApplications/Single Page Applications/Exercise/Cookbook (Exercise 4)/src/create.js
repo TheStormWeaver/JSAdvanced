@@ -1,3 +1,5 @@
+import {showDetails} from "./details.js"
+
 async function onSubmit(data) {
     const body = JSON.stringify({
         name: data.name,
@@ -8,7 +10,7 @@ async function onSubmit(data) {
 
     const token = sessionStorage.getItem('authToken');
     if (token == null) {
-        return window.location.pathname = 'index.html';
+        return alert("You are not logged in");
     }
 
     try {
@@ -22,7 +24,8 @@ async function onSubmit(data) {
         });
         
         if (response.status == 200) {
-            onSuccess()
+            const recpie = await response.json()
+            showDetails(recpie._id)
         } else {
             throw new Error(await response.json());
         }
@@ -34,12 +37,12 @@ async function onSubmit(data) {
 
 let main
 let section
-let onSuccess
+let setActiveNav
 
-export function setupCreate(mainTarget, sectionTarget, onSuccessTarget){
+export function setupCreate(mainTarget, sectionTarget, setActiveNavCb){
     main = mainTarget
     section = sectionTarget
-    onSuccess = onSuccessTarget
+    setActiveNav = setActiveNavCb
 
     const form = section.querySelector('form');
 
@@ -52,6 +55,7 @@ export function setupCreate(mainTarget, sectionTarget, onSuccessTarget){
 }
 
 export function showCreate(){
+    setActiveNav("createLink")
     main.innerHTML = ""
     main.appendChild(section)
 }
