@@ -61,7 +61,7 @@ describe('E2E tests', function () {
     })
 
     describe("Authentication", () => {
-        it.only("register sends correct request", async () => {
+        it("register sends correct request", async () => {
             await page.route("**/users/register", route => route.fulfill(json({_id: "0001", email, acessToken: "AAAA"})))
             const email = "jhon@abv.bg"
             const password = "123123"
@@ -83,7 +83,7 @@ describe('E2E tests', function () {
             expect(postData.password).to.equal(password)
         })
 
-        it.only("login sends correct request", async () => {
+        it("login sends correct request", async () => {
             await page.route("**/users/login", route => route.fulfill(json({_id: "0001", email, acessToken: "AAAA"})))
             const email = "jhon@abv.bg"
             const password = "123123"
@@ -102,6 +102,60 @@ describe('E2E tests', function () {
             const postData = JSON.parse(request.postData())
             expect(postData.email).to.equal(email)
             expect(postData.password).to.equal(password)
+        })
+    })
+    
+    describe("CRUD Opertaions", () => {
+
+        beforeEach(async () => {
+            await page.route("**/users/login", route => route.fulfill(json({_id: "0001", email, acessToken: "AAAA"})))
+            const email = "jhon@abv.bg"
+            const password = "123123"
+
+            await page.goto("http://127.0.0.1:5500/")
+            await page.click("text=Login")
+
+            await page.waitForSelector("form")
+            await page.fill('[name="email"]', email)
+            await page.fill('[name="password"]', password)
+
+            await Promise.all([   
+                page.waitForResponse(response => response.url().includes("/users/login")),
+                page.click('[type="submit"]')
+            ])
+
+        })
+
+        it.only("create send correct request", async () => {
+            const data = {
+                _id: "2222",
+                name: "1",
+                img: "2",
+                ingredients: ["1", "2", "3"],
+                steps: ["4", "5"]
+            }
+
+            await page.route("**/data/recipes", route => route.fulfill(json(data)))
+
+            await page.click("text=Create Recipe")
+
+            await page.waitForSelector("form")
+
+            await page.fill('[name="name"]', data.name)
+            await page.fill('[name="img"]', data.img)
+            await page.fill('[name="ingredients"]', data.ingredients.join("\n"))
+            await page.fill('[name="steps"]', data.steps.join("\n"))
+
+            const [request] = await Promise.all([   
+                page.waitForRequest(request => request.url().includes("/data/recipes")),
+                page.click('[type="submit"]')
+            ])
+
+            const requestData = JSON.parse(request.postData())
+            expect(requestData.name).to.equal(data.name)
+            expect(requestData.img).to.equal(data.img)
+            expect(requestData.ingredients).to.deep.equal(data.ingredients)
+            expect(requestData.steps).to.deep.equal(data.steps)
         })
     })
 });
