@@ -47,7 +47,7 @@ describe("E2E tests", function () {
     expect(visible).to.be.true
   });
 
-  it.only("untoggles content", async () => {
+  it("untoggles content", async () => {
     await page.goto("http://127.0.0.1:5500/");
 
     await page.click("#main>.accordion:first-child >> text=More")
