@@ -126,7 +126,7 @@ describe('E2E tests', function () {
 
         })
 
-        it.only("create send correct request", async () => {
+        it("create send correct request", async () => {
             const data = {
                 _id: "2222",
                 name: "1",
