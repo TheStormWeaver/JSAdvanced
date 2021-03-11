@@ -22,8 +22,8 @@ function createOptions(method = "get", data){
     }
 
   if(data){
-    result.headers["Content-Tyep"] = "application/json"
-    result.body = json.stringify(data)
+    result.headers["Content-Type"] = "application/json"
+    result.body = JSON.stringify(data)
   }
 
   const token = sessionStorage.getItem("authToken")
