@@ -1,2 +1,2 @@
 # JSAdvanced
-January 2021 - April 2021 Softuni Js Advanced Softuni Course
+January 2021 - April 2021 Js Advanced Softuni Course
