@@ -1,3 +1,5 @@
+import { notify } from "../notification.js"
+
 export const settings = {
   host: "",
 };
@@ -7,7 +9,7 @@ async function request(url, options) {
 
   if (response.ok == false) {
     const error = await response.json();
-    alert(error.message);
+    notify(error.message)
     throw new Error(error.message);
   }
 
