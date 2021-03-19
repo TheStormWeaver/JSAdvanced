@@ -2,7 +2,7 @@ import { html } from "../../node_modules/lit-html/lit-html.js";
 import { createFurniture } from "../api/data.js";
 import { notify, clear } from "../notification.js"
 
-const createTemplate = (onSubmit) => html`
+const createTemplate = (onSubmit, errorMsg) => html`
   <div class="row space-top">
     <div class="col-md-12">
       <h1>Create New Furniture</h1>
@@ -10,6 +10,7 @@ const createTemplate = (onSubmit) => html`
     </div>
   </div>
   <form @submit=${onSubmit} @blur=${(e) => console.log(e.target)}>
+  ${errorMsg ? html`<p style="color: red">${errorMsg}</p>` : ""}
     <div class="row space-top">
       <div class="col-md-4">
         <div class="form-group">
@@ -96,7 +97,7 @@ export async function createPage(ctx) {
     //validation for the above method
     if (
       Object.entries(data).filter(([k, v]) => k != "material").some(([k, v]) => v == "")) {
-      return notify("Some fields are missing")
+      return ctx.render(createTemplate(onSubmit, "Some fields are missing"))
     }
 
     data.year = Number(data.year);
