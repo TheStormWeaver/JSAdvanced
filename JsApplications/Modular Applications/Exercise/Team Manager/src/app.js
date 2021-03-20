@@ -1,14 +1,26 @@
 import { render } from "../node_modules/lit-html/lit-html.js"
 import page from "../node_modules/page/page.mjs"
 
+import { logout as apiLogout } from "./api/data.js"
 import { homePage } from "./views/home.js"
 import { browsePage } from "./views/browse.js"
+import { loginPage } from "./views/login.js"
+import { registerPage } from "./views/register.js"
+import { createPage } from "./views/create.js"
+import { detailsPage } from "./views/details.js"
+import { editPage } from "./views/edit.js"
 
 const main = document.querySelector("main")
+document.getElementById("logoutBtn").addEventListener("click", logout)
 
 page("/", decorateContext, homePage)
 page("/index.html", decorateContext, homePage)
 page("/browse", decorateContext, browsePage)
+page("/login", decorateContext, loginPage)
+page("/register", decorateContext, registerPage)
+page("/create", decorateContext, createPage)
+page("/details/:id", decorateContext, detailsPage)
+page("/edit/:id", decorateContext, editPage)
 
 setUserNav()
 page.start()
@@ -21,12 +33,18 @@ function decorateContext(ctx, next) {
 }
 
 function setUserNav() {
-  const userId = sessionStorage.getItem("uesrId")
+  const userId = sessionStorage.getItem("userId")
   if(userId != null){
-    Array.from(document.querySelectorAll("nav > a.user")).forEach(a => a.style.display = "block")
+    Array.from(document.querySelectorAll("nav > a.user")).forEach(a => a.style.display = "inline-block")
     Array.from(document.querySelectorAll("nav > a.guest")).forEach(a => a.style.display = "none")
   }else{
     Array.from(document.querySelectorAll("nav > a.user")).forEach(a => a.style.display = "none")
-    Array.from(document.querySelectorAll("nav > a.guest")).forEach(a => a.style.display = "block")
+    Array.from(document.querySelectorAll("nav > a.guest")).forEach(a => a.style.display = "inline-block")
   }
+}
+
+async function logout() {
+  await apiLogout()
+  setUserNav()
+  page.redirect("/")
 }
