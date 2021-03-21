@@ -1,3 +1,0 @@
-Requires page.js
-Requires lit-html
-(npm install)
