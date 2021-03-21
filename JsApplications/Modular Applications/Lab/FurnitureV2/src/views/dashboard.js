@@ -7,7 +7,7 @@ const dashboardTemplate = (data, search, onSearch) => html`
       <h1>Welcome to Furniture System</h1>
       <p>Select furniture from the catalog to view details.</p>
       <div style="float:right">
-        <input id="searchInput" name="search" type="text" .value=${search}/>
+        <input id="searchInput" name="search" type="text" .value=${search}>
         <button @click=${onSearch}>Search</button>
       </div>
     </div>
