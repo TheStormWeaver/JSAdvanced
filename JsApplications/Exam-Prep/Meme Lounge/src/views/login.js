@@ -33,6 +33,11 @@ export async function loginPage(ctx) {
     const formData = new FormData(ev.target)
     const email = formData.get("email").trim()
     const password = formData.get("password").trim()
+    
+    if(email == "" || password == ""){
+        return alert("All fields are required!")
+    }
+    
     await login(email, password)
 
     ctx.updateNav()
