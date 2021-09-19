@@ -7,7 +7,7 @@
 
 <p align="center">
 <a href="https://softuni.bg/trainings/3218/js-applications-february-2021">
-  <img width="90%" src="https://nakov.com/wp-content/uploads/2012/03/Software-University-logo-horizontal.png" alt="course">
+  <img width="50%" src="https://softuni.bg/Files/InternalCourses/new-pics/JS%20Apps.png" alt="course">
   </a>
 </p>
 
