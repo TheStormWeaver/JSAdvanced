@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://softuni.bg/">
+<a href="https://softuni.bg/trainings/3217/js-advanced-january-2021">
   <img width="50%" src="https://softuni.bg/Files/InternalCourses/new-pics/%D0%98%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D0%B8-%D1%81%D0%BD%D0%B8%D0%BC%D0%BA%D0%B8/JS%20Advanced%20(1).png" alt="course">
   </a>
 </p>
