@@ -1,11 +1,4 @@
 <p align="center">
-  <img src="https://forthebadge.com/images/badges/built-with-love.svg" alt="love">
-  <img src="https://forthebadge.com/images/badges/uses-html.svg" alt="html">
-  <img src="https://forthebadge.com/images/badges/uses-js.svg" alt="css">
-  <img src="https://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg" alt="works">
-</p>
-
-<p align="center">
 <a href="https://softuni.bg/trainings/3218/js-applications-february-2021">
   <img width="50%" src="https://softuni.bg/Files/InternalCourses/new-pics/JS%20Apps.png" alt="course">
   </a>
