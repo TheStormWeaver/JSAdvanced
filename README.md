@@ -38,7 +38,7 @@
 
 - [JS Applications Course Link](https://softuni.bg/trainings/3218/js-applications-february-2021)
 
-# Certificate
+# Certificates
 <p align="center">
 <a href="https://softuni.bg/certificates/certificates/converttoimage/98308?code=ac7b26cf">
   <img width="100%" src="https://softuni.bg/certificates/certificates/converttoimage/98308?code=ac7b26cf" alt="certificate">
