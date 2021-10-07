@@ -23,6 +23,13 @@
 
 - [JS Advanced Course Link](https://softuni.bg/trainings/3217/js-advanced-january-2021)
 
+# Certificates
+<p align="center">
+<a href="https://softuni.bg/certificates/certificates/converttoimage/98308?code=ac7b26cf">
+  <img width="100%" src="https://softuni.bg/certificates/certificates/converttoimage/98308?code=ac7b26cf" alt="certificate">
+  </a>
+</p>
+
 <p align="center">
   <img src="https://img.shields.io/badge/Storm-Weaver-blue" alt="storm" width="10%">
   <img src="https://img.shields.io/badge/Open%20Source-Project-red" alt="project" width="13%">
