@@ -23,7 +23,7 @@
 
 - [JS Advanced Course Link](https://softuni.bg/trainings/3217/js-advanced-january-2021)
 
-# Certificates
+# Certificate
 <p align="center">
 <a href="https://softuni.bg/certificates/certificates/converttoimage/98308?code=ac7b26cf">
   <img width="100%" src="https://softuni.bg/certificates/certificates/converttoimage/98308?code=ac7b26cf" alt="certificate">
