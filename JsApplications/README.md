@@ -23,6 +23,13 @@
 
 - [JS Applications Course Link](https://softuni.bg/trainings/3218/js-applications-february-2021)
 
+# Certificates
+<p align="center">
+<a href="https://softuni.bg/certificates/certificates/converttoimage/102378?code=d50df1f6">
+  <img width="100%" src="https://softuni.bg/certificates/certificates/converttoimage/102378?code=d50df1f6" alt="certificate">
+  </a>
+</p>
+
 <p align="center">
   <img src="https://img.shields.io/badge/Storm-Weaver-blue" alt="storm" width="10%">
   <img src="https://img.shields.io/badge/Open%20Source-Project-red" alt="project" width="13%">
