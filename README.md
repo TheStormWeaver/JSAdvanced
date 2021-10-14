@@ -40,14 +40,14 @@
 
 # Certificates
 <p align="center">
-<a href="https://softuni.bg/certificates/certificates/converttoimage/108973?code=3fd339be">
-  <img width="100%" src="https://softuni.bg/certificates/certificates/converttoimage/108973?code=3fd339be" alt="certificate">
+<a href="https://softuni.bg/certificates/certificates/converttoimage/98308?code=ac7b26cf">
+  <img width="100%" src="https://softuni.bg/certificates/certificates/converttoimage/98308?code=ac7b26cf" alt="Js Advanced Certificate">
   </a>
 </p>
 
 <p align="center">
 <a href="https://softuni.bg/certificates/certificates/converttoimage/102378?code=d50df1f6">
-  <img width="100%" src="https://softuni.bg/certificates/certificates/converttoimage/102378?code=d50df1f6" alt="certificate">
+  <img width="100%" src="https://softuni.bg/certificates/certificates/converttoimage/102378?code=d50df1f6" alt="Js Applications Certificate">
   </a>
 </p>
 
